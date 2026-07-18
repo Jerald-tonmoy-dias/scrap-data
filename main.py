@@ -38,5 +38,8 @@ print(df)
 print(df.shape)
 
 # Step 5.1: Save to a CSV File
-# Save the DataFrame to a CSV file named sports_statistics.csv
-### YOUR CODE HERE ###
+df.to_csv('sports_statistics.csv', index=False, header=[
+    'GameID', 'Team 1', 'Team 2',
+    'Expected Runs (Team 1)', 'Expected Runs (Team 2)',
+    'Over/Under', 'Moneyline Favorite'
+])
