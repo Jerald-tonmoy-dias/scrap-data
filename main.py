@@ -15,7 +15,19 @@ soup = BeautifulSoup(response.text, 'html.parser')
 # Print the HTML content to inspect
 print(soup.prettify())
 # Step 3.2: Extract the Required Data
-### YOUR CODE HERE ###
+rows = soup.find('tbody').find_all('tr')
+game_data = []
+for row in rows:
+    cols = row.find_all('td')
+    game_data.append({
+        'game_id': int(cols[0].text),
+        'team_1': cols[1].text,
+        'team_2': cols[2].text,
+        'expected_runs_team_1': float(cols[3].text),
+        'expected_runs_team_2': float(cols[4].text),
+        'over_under': float(cols[5].text),
+        'moneyline_favorite': cols[6].text
+    })
 
 # Step 4.1: Convert to a DataFrame
 # Import pandas
