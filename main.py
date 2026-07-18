@@ -30,17 +30,12 @@ for row in rows:
     })
 
 # Step 4.1: Convert to a DataFrame
-# Import pandas
-### YOUR CODE HERE ###
+import pandas as pd
 
-# Convert the game data into a pandas DataFrame
-### YOUR CODE HERE ###
+df = pd.DataFrame(game_data)
 
-# Inspect the DataFrame
-### YOUR CODE HERE ###
-
-# Save and print the shaped data
-### YOUR CODE HERE ###
+print(df)
+print(df.shape)
 
 # Step 5.1: Save to a CSV File
 # Save the DataFrame to a CSV file named sports_statistics.csv
