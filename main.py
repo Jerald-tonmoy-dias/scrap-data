@@ -4,7 +4,16 @@
 # Ensure you have run the terminal command to install the correct libraries using pip.
 # You must use the terminal window as directed in Step 3.
 ### YOUR CODE HERE ###
+import requests
+from bs4 import BeautifulSoup
 
+# Fetch the webpage content
+url = "http://127.0.0.1:5500/baseball_stats.html"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Print the HTML content to inspect
+print(soup.prettify())
 # Step 3.2: Extract the Required Data
 ### YOUR CODE HERE ###
 
